@@ -22,7 +22,7 @@
         if ($is_sort == '1') {
             $query = "select * from notebook.$newNameObj order by $sort desc";
         } else {
-            $query = "select * from notebook.$newNameObj";
+            $query = "select * from notebook.$newNameObj order by $sort asc";
         }
     }else{
          $query = "select * from notebook.$newNameObj";
