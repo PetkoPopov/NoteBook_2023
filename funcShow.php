@@ -3,14 +3,17 @@
 
 </head>
 <body>
-    <a href="index.php">go to NoteBook </a>
-    <a href="insert_income_cost.php">income and payment</a>
-    <a href="View/showAllForObject.php">show balans</a>
 
     <?php
     $newNameObj = $_GET['newNameObject'];
     $msql = new mysqli('', 'root', '', "notebook");
-    $show = '';
+    ?>    
+    <a href="index.php">go to NoteBook </a>
+    <a href="./income_form.php?name=<?= $newNameObj ?>">go to insert income payment </a>
+    <a href="View/showAllForObject.php?name=<?=$newNameObj?>">show balans</a>
+
+    <?php
+    $query = "select * from notebook.$newNameObj";
     if (isset($_GET['is_sort'])) {
         $is_sort = $_GET['is_sort'];
     } else {
@@ -24,41 +27,42 @@
         } else {
             $query = "select * from notebook.$newNameObj order by $sort asc";
         }
-    }else{
-         $query = "select * from notebook.$newNameObj";
+    } else {
+        $query = "select * from notebook.$newNameObj";
     }
-        $result = $msql->query($query);
+    $result = $msql->query($query);
+    if ($result) {
         $show = $result->fetch_all();
-    
-    ?>
-    <form action="proccess/calc.php">
-        <table>
+        ?>
+        <form action="proccess/calc.php">
+            <table>
 
-            <input type="hidden" name="is_sort" value="<?= $is_sort ?>"/>
+                <input type="hidden" name="is_sort" value="<?= $is_sort ?>"/>
 
-            <input type="hidden" value="<?= $newNameObj ?>" name="newNameObject"/>
+                <input type="hidden" value="<?= $newNameObj ?>" name="newNameObject"/>
+               
+                <th><input type="submit" name="id" value="sort" ></th>
 
-            <th><input type="submit" name="id" value="sort" ></th>
-
-            <th><input type="submit" name="empty" value="sort"></th>
-            <th><input type="submit" name="reccord" value="sort" ></th>
-            <th><input type="submit" name="date" value="sort"></th>
-
+                <th>Record</th>
+                <th>Date Time</th>
+                <th><input type="submit" name="date" value="sort"></th>
 
 
-            <?php
-            $counter = 0;
 
-            foreach ($show as $recc) {
+    <?php
+    $counter = 0;
 
-                $counter++;
-                if ($counter % 8 == 0) {
-                    ?>
-                    <tr><!-- comment -->
-                        <td><a href="index.php">Go to NoteBook</a></td>
-                        <td><a href="View/showAllForObject.php">show balans</a></td>
-                        <td><a href="insert_income_cost.php">income and payment</a></td>
-                    </tr><?php
+    foreach ($show as $recc) {
+
+        $counter++;
+        if ($counter % 8 == 0) {
+            ?>
+                        <tr><!-- comment -->
+                            <td><a href="index.php">Go to NoteBook</a></td>
+                            <td><a href="View/showAllForObject.php?name=<?=$newNameObj?>">show balans</a></td>
+                            <td><form action="income_form.php"><button name="name"><?= $newNameObj ?></button>
+                                    <input type="hidden" name="name" value="<?=$newNameObj?>"/></form></td>
+                        </tr><?php
         }
         $n = 'update_' . $recc[0];
 
@@ -77,10 +81,12 @@
         echo "</tr>";
     }
     echo "</table>";
-            ?>
+}
+$msql->close();
+?>
 
     </form>
     <a href="index.php">go to NoteBook</a>
-    <a href="insert_income_cost.php">go to insert income payment </a>
-    <a href="View/showAllForObject.php">go to balans</a>
+    <a href="../NTBook/income_form.php?name=<?= $newNameObj ?>">go to insert income payment </a>
+    <a href="View/showAllForObject.php?name=<?=$newNameObj?>">go to balans</a>
 </body>

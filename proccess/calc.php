@@ -16,7 +16,10 @@ if(array_key_exists('id', $_GET)){
 
    $id_update = $_GET['edit'];
    $id_update= explode('_', $id_update);
-   header("Location:../View/update.php?id=$id_update[1]"); 
+   $id = $id_update[1];
+   header("Location:../View/update_form.php?id=$id&newNameObject=$newNameObj"); 
+}else{
+    header("Location:../income_form.php?name=$newNameObj");
 }
 
 

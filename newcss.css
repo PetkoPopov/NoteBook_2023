@@ -31,10 +31,7 @@ input{
     font-size: x-large;
     width: 200px; 
     background-color: #ffff99;
-
-
 }
-
 
 td{
     background-color: #00cccc;
@@ -48,8 +45,15 @@ a{
     border: solid 2px #009999;
     height:76px;
 }
-span{
+/*span{
     bottom: 25px;
     font-size: 22px;
     background-color: #ff9933;
+}*/
+.clr_field{
+    background-color: #66ff66;
+    width: content-box;
 }
+    h4{
+        width:content-box;
+    }

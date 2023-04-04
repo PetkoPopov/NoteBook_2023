@@ -12,6 +12,7 @@
             <select style="background-color: #cccc00; width:100px;height: 66px;" name="opt">
                 <option value="#">no value</option>
                 <?php
+//                require_once 'autoload.php';
                 $allNames = [];
                 $msql = new mysqli('', 'root', '', "notebook");
                 $query = "select distinct(`name`) from `namess` ";
@@ -27,7 +28,15 @@
             </select> 
             <p>
             <div>
-                <a href="insert_income_cost.php">go to insert incomes or costs</a>
+                <a href="insert_income_cost.php?name=<?php
+                if(isset($_GET['opt'])&& !empty($_GET['opt'])){
+                    echo $_GET['opt'];
+                }else{
+                    echo '';
+                }
+                        
+                        
+                        ?>">go to insert incomes or costs</a>
                 <p>
                     </p>
                     <a href="View/showAllForObject.php"> go to balans</a>
@@ -52,6 +61,6 @@
  
         </form>
            
-        <a href="clearDB.php">clear tables</a>
+        <a href="clearDB.php">erase some tables</a>
     </body>
 </html>
