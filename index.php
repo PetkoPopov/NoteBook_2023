@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="../TestAfterReinstaling/newcss.css" style="display: none"/>
         
         <form action="Search/search.php">
+            <input type="text" name="search_word"/>
             <input type="submit" value="search"/>
         </form>
         <form action="proccess/index.php">
