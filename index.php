@@ -4,10 +4,15 @@
     <head>
         <meta charset="UTF-8">
         <title>TEST AFTER INSTALING</title>
-        <link rel="stylesheet" href="../TestAfterReinstaling/newcss.css" />
+        <!--<link rel="stylesheet" href="../TestAfterReinstaling/newcss.css" />-->
     </head>
     <body>
        
+        <link rel="stylesheet" href="../TestAfterReinstaling/newcss.css" style="display: none"/>
+        
+        <form action="Search/search.php">
+            <input type="submit" value="search"/>
+        </form>
         <form action="proccess/index.php">
             <select style="background-color: #cccc00; width:100px;height: 66px;" name="opt">
                 <option value="#">no value</option>
@@ -26,6 +31,8 @@
                 ?>
 
             </select> 
+           
+            
             <p>
             <div>
                 <a href="insert_income_cost.php?name=<?php

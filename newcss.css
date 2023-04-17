@@ -2,6 +2,11 @@ body
 {
     background-color: #6666ff;
 }
+.button_input{
+    background-color: #006633;
+    border-color: #66ff66;
+    box-shadow: #cccc00 12px 7px;
+}
 
 button{
     
@@ -13,24 +18,16 @@ button{
     
 
 }
-div{
-    height: 100px;
-    width:300px;
-    border: solid black 3px;
-    border-radius: 15%;
-    background-color: aquamarine;
-    text-align: center;
-    /*font-size: 70px;*/
 
-}
 input{
-    width: 150px;
-    height: 66px;
+    width: 100px;
+    height: 46px;
     border-radius: 15%;
     text-align: center;
     font-size: x-large;
     width: 200px; 
     background-color: #ffff99;
+    
 }
 
 td{
@@ -39,17 +36,7 @@ td{
     font-size: x-large;
     text-align: center;
 }
-a{
-    box-sizing: content-box;
-    background-color: #66ff66;
-    border: solid 2px #009999;
-    height:76px;
-}
-/*span{
-    bottom: 25px;
-    font-size: 22px;
-    background-color: #ff9933;
-}*/
+
 .clr_field{
     background-color: #66ff66;
     width: content-box;

@@ -66,7 +66,7 @@
         }
         $n = 'update_' . $recc[0];
 
-        $recc[] = " <input type='submit' value='$n'  name='edit'   />";
+        $recc[] = " <input class='button_input'   type='submit' value='$n'  name='edit'   />";
 
         echo "<tr>";
 
