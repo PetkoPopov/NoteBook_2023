@@ -12,7 +12,7 @@
         
         <form action="Search/search.php">
             <input type="text" name="search_word"/>
-            <input type="submit" value="search"/>
+            <input type="submit" value="не работи кирилица search"/>
         </form>
         <form action="proccess/index.php">
             <select style="background-color: #cccc00; width:100px;height: 66px;" name="opt">
@@ -32,24 +32,7 @@
                 ?>
 
             </select> 
-           
-            
-            <p>
-            <div>
-                <a href="insert_income_cost.php?name=<?php
-                if(isset($_GET['opt'])&& !empty($_GET['opt'])){
-                    echo $_GET['opt'];
-                }else{
-                    echo '';
-                }
-                        
-                        
-                        ?>">go to insert incomes or costs</a>
-                <p>
-                    </p>
-                    <a href="View/showAllForObject.php"> go to balans</a>
-            </div>
-            </p>
+          
             <p>
             INSERT NEW NAME-OBJECT :<input type="text" name="newObject"  value="">
             </p>
@@ -59,14 +42,11 @@
             <label for="time_event">избери дата </label>
             <input type="date" name="time_event" id="time_event">
              
-
                 <label for="time_manual" >въведи датата ръчно</label>
                 <input type="text" name="time_manual" id="time_manual" >
-
             
             <input  type="submit" style="background-color: #cccc00; width:100px;height: 66px;" name="btn" value="Запиши" >
 
- 
         </form>
            
         <a href="clearDB.php">erase some tables</a>

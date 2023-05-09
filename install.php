@@ -47,7 +47,19 @@
     else
     {
         $msql->error;
-    }         
+    }
+    $query = "CREATE TABLE `notebook`.`income_cost` ("
+        . " `id` INT NOT NULL AUTO_INCREMENT ,"
+        . " `cost_income` INT(10) NULL DEFAULT NULL , "
+        . "`expl` TEXT NULL DEFAULT NULL ,"
+        . " `at_date` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP ,"
+        . " PRIMARY KEY (`id`)) ENGINE = InnoDB; ";
+$msql->query($query);
+$query = "ALTER TABLE `income_cost` ADD `name` TEXT NOT NULL AFTER `at_date`;";
+$msql->query($query);
+$query = "ALTER TABLE `income_cost` ADD INDEX(`name`)";
+$msql->query($query);
+
     ?>
    
     <p>
