@@ -1,63 +1,27 @@
+<html>
+    <head>
+         <link rel="stylesheet" href="Search/tableSearch.css"/>
+    </head>
+    <body>
+       
 <?php
 include_once './Search/search.php';
 $res =search();
 ?>
-<pre>
-<?php 
-//to do table
 
-    var_dump($res);
-    
-
-?>  
 <div class="container">
-	<table>
-		<thead>
-			<tr>
-				<th>Column 1</th>
-				<th>Column 2</th>
-				<th>Column 3</th>
-				<th>Column 4</th>
-				<th>Column 5</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Cell 1</td>
-				<td>Cell 2</td>
-				<td>Cell 3</td>
-				<td>Cell 4</td>
-				<td>Cell 5</td>
-			</tr>
-			<tr>
-				<td>Cell 1</td>
-				<td>Cell 2</td>
-				<td>Cell 3</td>
-				<td>Cell 4</td>
-				<td>Cell 5</td>
-			</tr>
-			<tr>
-				<td>Cell 1</td>
-				<td>Cell 2</td>
-				<td>Cell 3</td>
-				<td>Cell 4</td>
-				<td>Cell 5</td>
-			</tr>
-			<tr>
-				<td>Cell 1</td>
-				<td>Cell 2</td>
-				<td>Cell 3</td>
-				<td>Cell 4</td>
-				<td>Cell 5</td>
-			</tr>
-			<tr>
-				<td>Cell 1</td>
-				<td>Cell 2</td>
-				<td>Cell 3</td>
-				<td>Cell 4</td>
-				<td>Cell 5</td>
-			</tr>
-		</tbody>
-	</table>
+   
+    <table>
+	
+ <?php
+    foreach ($res as  $value) {  
+?>    
+                <tr><td><?=$value?></td></tr>
+    
+        <?php
+    }
+    ?>
+        </table>
 </div>  
-</pre>
+    </body>
+</html>

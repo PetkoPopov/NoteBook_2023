@@ -34,4 +34,4 @@ function search() {
 }
 ?>
 
-<a href="../index.php">go to index</a>
+<a href="./index.php">go to index</a>
