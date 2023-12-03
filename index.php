@@ -5,12 +5,20 @@
         <meta charset="UTF-8">
         <title>TEST AFTER INSTALING</title>
         
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">-->
         <link rel="stylesheet" href="../NoteBook_2023/newcss.css" />
         
     </head>
     <body>
-       
+       <?php
+       if(array_key_exists('is_deleted', $_GET)&& $_GET['is_deleted']== true){
+       ?>
+        <div class="warning">
+            <h3> deleted successfuly </h3>
+        </div>
+           <?php
+       }
+       ?>
         
         <form action="./showSearchResult.php" >
             <input type="text" name="search_word"/>

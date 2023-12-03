@@ -1,5 +1,5 @@
 <head>
-   <link rel="stylesheet" href="../NoteBook_2023/newcss.css" style="display: none"/>
+    <link rel="stylesheet" href="../NoteBook_2023/newcss.css" style="display: none"/>
 
 </head>
 <body>
@@ -10,7 +10,7 @@
     ?>    
     <a href="index.php">go to NoteBook </a>
     <a href="./income_form.php?name=<?= $newNameObj ?>">go to insert income payment </a>
-    <a href="View/showAllForObject.php?name=<?=$newNameObj?>">show balans</a>
+    <a href="View/showAllForObject.php?name=<?= $newNameObj ?>">show balans</a>
 
     <?php
     $query = "select * from notebook.$newNameObj";
@@ -40,7 +40,7 @@
                 <input type="hidden" name="is_sort" value="<?= $is_sort ?>"/>
 
                 <input type="hidden" value="<?= $newNameObj ?>" name="newNameObject"/>
-               
+
                 <th><input type="submit" name="id" value="sort" ></th>
 
                 <th>Record</th>
@@ -49,44 +49,45 @@
 
 
 
-    <?php
-    $counter = 0;
+                <?php
+                $counter = 0;
 
-    foreach ($show as $recc) {
+                foreach ($show as $recc) {
 
-        $counter++;
-        if ($counter % 8 == 0) {
-            ?>
+                    $counter++;
+                    if ($counter % 8 == 0) {
+                        ?>
                         <tr><!-- comment -->
                             <td><a href="index.php">Go to NoteBook</a></td>
-                            <td><a href="View/showAllForObject.php?name=<?=$newNameObj?>">show balans</a></td>
+                            <td><a href="View/showAllForObject.php?name=<?= $newNameObj ?>">show balans</a></td>
                             <td><form action="income_form.php"><button name="name"><?= $newNameObj ?></button>
-                                    <input type="hidden" name="name" value="<?=$newNameObj?>"/></form></td>
+                                    <input type="hidden" name="name" value="<?= $newNameObj ?>"/></form></td>
                         </tr><?php
-        }
-        $n = 'update_' . $recc[0];
+                    }
+                    $n = 'update_' . $recc[0];
+                    $delete = 'delete_' . $recc[0];
+                    $recc[] = " <input class='button_input'   type='submit' value='$n'  name='edit'   />";
+                    $recc[] = " <input class='button_input'   type='submit' value='$delete'  name='delete'   />";
+                    ?>
+                    <tr>
+                        <?php
+                        foreach ($recc as $r) {
 
-        $recc[] = " <input class='button_input'   type='submit' value='$n'  name='edit'   />";
 
-        echo "<tr>";
+                            echo "<td>";
+                            echo $r;
+                            echo "</td>";
+                        }
 
-        foreach ($recc as $r) {
+                        echo "</tr>";
+                    }
+                    echo "</table>";
+                }
+                $msql->close();
+                ?>
 
-
-            echo "<td>";
-            echo $r;
-            echo "</td>";
-        }
-
-        echo "</tr>";
-    }
-    echo "</table>";
-}
-$msql->close();
-?>
-
-    </form>
-    <a href="index.php">go to NoteBook</a>
-    <a href="./income_form.php?name=<?= $newNameObj ?>">go to insert income payment </a>
-    <a href="View/showAllForObject.php?name=<?=$newNameObj?>">go to balans</a>
-</body>
+                </form>
+            <a href="index.php">go to NoteBook</a>
+            <a href="./income_form.php?name=<?= $newNameObj ?>">go to insert income payment </a>
+            <a href="View/showAllForObject.php?name=<?= $newNameObj ?>">go to balans</a>
+            </body>

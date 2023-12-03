@@ -18,7 +18,14 @@ if(array_key_exists('id', $_GET)){
    $id_update= explode('_', $id_update);
    $id = $id_update[1];
    header("Location:../View/update_form.php?id=$id&newNameObject=$newNameObj"); 
-}else{
+}else if(array_key_exists('delete', $_GET)){
+    
+   $id_update = $_GET['delete'];
+   $id= explode('_', $id_update)[1];
+   header("Location:../View/delete_form.php?id=$id&newNameObject=$newNameObj"); 
+    
+}
+else{
     header("Location:../income_form.php?name=$newNameObj");
 }
 
