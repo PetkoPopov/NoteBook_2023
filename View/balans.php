@@ -4,16 +4,16 @@
         <link rel="stylesheet" href="../newcss.css"/>
     </head><!-- comment -->
     <body>
-        <a href="../index.php">go to noteboook</a>
-    <a href="../insert_income_cost.php"> go to income and payment</a>
-<h2>the Balans is </h2>
+        <a href="../index.php">go to noteboook</a><h2>the Balans is </h2>
  
         <?php
         
         $balans = $_GET['balans'];
         $count_work_days = $_GET['count_work_days'];
         $name = $_GET['name'];
-        
+      ?>  
+    <a href="../income_form.php?name=<?=$name?>"> go to income and payment</a>
+<?php
             $per_day = round((int)$balans / $count_work_days, 2);
             if (isset($balans) && $balans >= 0) {
                 ?>   <div>

@@ -13,11 +13,11 @@ if (empty($_GET['textArea']) || !isset($_GET['textArea'])) {
     header("Location:../funcShow.php?newNameObject=$newNameObj");
 }
 
-
 if (isset($_GET['opt']) && $_GET['opt'] != "#" && !empty($_GET['opt'])) {
     $newNameObj = $_GET['opt'];
 } else if (!empty($_GET['newObject']) && $_GET['opt'] == '#') {
 
+//var_dump($_GET);exit;
     $newNameObj = $_GET['newObject'];
 //     var_dump($newNameObj);exit;
     $query = " CREATE TABLE `notebook`."

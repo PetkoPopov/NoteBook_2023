@@ -2,9 +2,9 @@
 $conn = new mysqli('', "root", "", 'notebook');
 
 $name = $_GET['newNameObj'];
-
+ 
 if (!empty($_GET['cost_income']) && (!empty($_GET['explain_cost_income'] || $_GET['select']))) {
-       
+//  exit('HERE income_cosrt');      
         $query = "INSERT INTO `income_cost` (`cost_income` , `at_date` , `expl`,`name`) VALUES (? , ? , ? ,?)";
         $record = $conn->prepare($query);
         if (isset($_GET['cost_income']) && $_GET['cost_income'] > 0) {
@@ -29,8 +29,14 @@ if (!empty($_GET['cost_income']) && (!empty($_GET['explain_cost_income'] || $_GE
          
         $record->bind_param('dsss', $val, $date, $expl, $name);
 
+       
         if ($record->execute()) {
-            echo "<b>RECORD</b>";
+            
+//            $query_dump = "mysqldump -u root -p notebook>F://resrev/notebookarch.sql ";
+//            if($conn->query($query)){
+//                echo "dump";exit;
+//            }
+            
       header("Location: ../View/ShowAllForObject.php?name=$name");
             } else {
                 echo "no record";

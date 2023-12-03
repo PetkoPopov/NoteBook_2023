@@ -4,16 +4,19 @@
     <head>
         <meta charset="UTF-8">
         <title>TEST AFTER INSTALING</title>
-        <!--<link rel="stylesheet" href="../TestAfterReinstaling/newcss.css" />-->
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../NoteBook_2023/newcss.css" />
+        
     </head>
     <body>
        
-        <link rel="stylesheet" href="../TestAfterReinstaling/newcss.css" style="display: none"/>
         
-        <form action="Search/search.php">
+        <form action="./showSearchResult.php" >
             <input type="text" name="search_word"/>
-            <input type="submit" value="не работи кирилица search"/>
+            <input type="submit" value="не работи кирилица search" class="button_input"/>
         </form>
+        
         <form action="proccess/index.php">
             <select style="background-color: #cccc00; width:100px;height: 66px;" name="opt">
                 <option value="#">no value</option>
@@ -34,7 +37,7 @@
             </select> 
           
             <p>
-            INSERT NEW NAME-OBJECT :<input type="text" name="newObject"  value="">
+                INSERT NEW NAME-OBJECT :<input type="text" name="newObject"  value="" placeholder="без интервали">
             </p>
             <p>
                 <textarea name="textArea" rows="5" cols="100" style="background-color: #99ff99 ; font-size: x-large"></textarea>

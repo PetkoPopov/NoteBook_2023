@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="../TestAfterReinstaling/newcss.css" />
+   <link rel="stylesheet" href="../NoteBook_2023/newcss.css" style="display: none"/>
 
 </head>
 <body>
@@ -87,6 +87,6 @@ $msql->close();
 
     </form>
     <a href="index.php">go to NoteBook</a>
-    <a href="../NTBook/income_form.php?name=<?= $newNameObj ?>">go to insert income payment </a>
+    <a href="./income_form.php?name=<?= $newNameObj ?>">go to insert income payment </a>
     <a href="View/showAllForObject.php?name=<?=$newNameObj?>">go to balans</a>
 </body>

@@ -1,6 +1,6 @@
 
      <!--<link rel="stylesheet" href="../newcss.css"/>-->
-    
+    <link rel="stylesheet" href="../NoteBook_2023/newcss.css" style="display: none"/>
 
         <?php
         include_once '../View/MakeTableFromArray.php';
@@ -22,7 +22,7 @@
         }
         ?>
          <a href="../index.php">go to noteboook</a>
-            <a href="../insert_income_cost.php"> go to income and payment</a>
+            <a href="../income_form.php?name=<?=$obj?>"> go to income and payment</a>
           
      <form action="../proccess/balans_for_all_days.php">
             <input type="hidden" name ="name" value="<?= $obj ?>"/>
@@ -46,7 +46,8 @@
                     ?>          <option value="<?= $year_distinct ?>"><?= $year_distinct ?></option><?php
                 }
                 ?>
-        </form><!-- comment -->
+        </form>
+            
         
         
     

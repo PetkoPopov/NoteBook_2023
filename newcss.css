@@ -44,3 +44,14 @@ td{
     h4{
         width:content-box;
     }
+    input[name="submit"]{
+        background: brown;
+    text-align: center;
+    color: white;
+    }
+    form{
+            display: flex;
+    /* flex-flow: wrap; */
+    flex-flow: wrap;
+    color: floralwhite;
+    }
