@@ -1,11 +1,12 @@
 <?php
 
 //echoУАУЬ
+//var_dump($_GET);die;
 $msql = new mysqli('', 'root', '', "notebook");
 
 if (($_GET['opt']) == '#' && empty($_GET['newObject'])) {
 
-    die("No choosen Ctaegory");
+    die("No choosen Category !");
 }
 if (empty($_GET['textArea']) || !isset($_GET['textArea'])) {
 
@@ -75,6 +76,15 @@ if($stmt234 == null){
     $stmt234->bind_param('ss', $event2, $time_event2);
 
         $event2 = $_GET['textArea'];
+        if(!empty($_GET['link'])){
+            $link = $_GET['link'];
+           
+        
+            
+//            $link_add = " '<a href='../../  .$link.'>  link  </a>' "// не работи;
+            $link_add =  '<a href="'.$link.' ">  link  </a>' ;
+            $event2= $event2.$link_add;
+        }
     if (!empty($_GET['time_event'])) {
 
         $time_event2 = $_GET["time_event"];

@@ -49,6 +49,7 @@
             </p>
             <p>
                 <textarea name="textArea" rows="5" cols="100" style="background-color: #99ff99 ; font-size: x-large"></textarea>
+                <input  type="text" placeholder="insert link" name="link" />
             </p>
             <label for="time_event">избери дата </label>
             <input type="date" name="time_event" id="time_event">
@@ -57,8 +58,7 @@
                 <input type="text" name="time_manual" id="time_manual" >
             
             <input  type="submit" style="background-color: #cccc00; width:100px;height: 66px;" name="btn" value="Запиши" >
-
-        </form>
+                  </form>
            
         <a href="clearDB.php">erase some tables</a>
     </body>

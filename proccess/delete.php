@@ -14,7 +14,7 @@ $tableForDel = 'notebook.'.$newNameObject;
     }else{
         $msql->errno();
         $del="is imposible";
-        header("Location:../index.php?is_deleted=$del");
+        header("Location:../index?is_deleted=$del");
     }
 
     
