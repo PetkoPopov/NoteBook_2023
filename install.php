@@ -22,7 +22,7 @@
 //            . " `id` INT(9) NOT NULL , "
 //            . "`name` VARCHAR(100) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
 
-    $query="CREATE TABLE `notebook`.`namess` ( "
+    $query="CREATE TABLE if not exists `notebook`.`namess` ( "
             . "`id` INT NOT NULL AUTO_INCREMENT ,"
             . " `name` VARCHAR(100) NOT NULL ,"
             . " `at_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,"
@@ -35,7 +35,7 @@
     {
         $msql->error;
     }
-     $query = "CREATE TABLE `notebook`.`payment_staff`("
+     $query = "CREATE TABLE if not exists `notebook`.`payment_staff`("
              . "`id` INT NOT NULL AUTO_INCREMENT ,"
              . " `name` VARCHAR(100) NOT NULL ,"
              . "PRIMARY KEY (id) ) ENGINE=InnoDB;";
@@ -48,7 +48,7 @@
     {
         $msql->error;
     }
-    $query = "CREATE TABLE `notebook`.`income_cost` ("
+    $query = "CREATE TABLE if not exists`notebook`.`income_cost` ("
         . " `id` INT NOT NULL AUTO_INCREMENT ,"
         . " `cost_income` INT(10) NULL DEFAULT NULL , "
         . "`expl` TEXT NULL DEFAULT NULL ,"
