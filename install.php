@@ -11,7 +11,7 @@
 
 
     <?php
-    $query = "Create database `NoteBook` ";
+    $query = "Create database if not exists `NoteBook` ";
     $msql = new mysqli('', 'root', '');
     $msql->query($query);
     $msql->close();
